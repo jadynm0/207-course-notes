@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Exercise (Chapter 14: Regular Expressions) — writing patterns and matching.
  *
@@ -20,8 +23,7 @@ public class Validators {
    * @return true iff input is a valid email address
    */
   public static boolean isEmail(String input) {
-    // TODO: return input.matches("...") with an appropriate pattern.
-    return false;
+    return input.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
   }
 
   /**
@@ -33,8 +35,7 @@ public class Validators {
    * @return true iff input matches the phone-number pattern
    */
   public static boolean isPhoneNumber(String input) {
-    // TODO
-    return false;
+    return input.matches("\\d{3}-\\d{3}-\\d{4}");
   }
 
   /**
@@ -46,7 +47,6 @@ public class Validators {
    * @return true iff input is a valid Java identifier
    */
   public static boolean isJavaVariableName(String input) {
-    // TODO
-    return false;
+    return input.matches("[a-z_$][a-zA-Z0-9_$]*");
   }
 }
